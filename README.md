@@ -10,7 +10,7 @@ Use in your pipeline alongside beast, treedater, phylotree.js, etc., and realize
 
 ## Example command
 
-`date-decimal 1984-09-20 -f YYYY-MM-DD`
+`decimal-date 1984-09-20 -f YYYY-MM-DD`
 
 ## Example output
 ```
