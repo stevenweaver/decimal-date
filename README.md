@@ -7,5 +7,6 @@ Accepts a date in any format and returns a decimal date like seen in BEAST or th
 
 ## Example output
 ```
-decimal-date 2017-01-20 
+10:03:55 sweaver@home decimal-date master decimal-date 2017-01-20                                           
+2017.0510752688172
 ```
