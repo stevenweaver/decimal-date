@@ -1,0 +1,15 @@
+{
+  "name": "decimal-date",
+  "version": "0.1.0",
+  "description": "Accepts a date in any format and returns a decimal date like seen in BEAST or the lubridate R package",
+  "main": "src/index.js",
+  "bin": {
+    "decimal-date": "./src/index.js"
+  },
+  "author": "Steven Weaver",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^4.1.1",
+    "moment": "^2.24.0"
+  }
+}
