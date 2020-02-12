@@ -3,7 +3,7 @@ Accepts a date in any format and returns a decimal date like seen in BEAST or th
 
 ## Example command
 
-`date-decimal 1984-09-20 -f YYYY-MM-DD'`
+`date-decimal 1984-09-20 -f YYYY-MM-DD`
 
 ## Example output
 ```
