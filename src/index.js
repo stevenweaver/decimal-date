@@ -7,20 +7,24 @@ const commander = require("commander"),
  * Converts any date format to decimal-date like in BEAST or R's lubridater package
  */
 
-const default_date_format = "YYYY-MM-DD";
+const defaultDateFormat = "YYYY-MM-DD";
 
-var date_input = undefined;
+var dateInput = undefined;
 
 commander
   .arguments("<date>", "Input date")
   .action(cmd => {
-    date_input = cmd;       
+    dateInput = cmd;       
   })
   .option(
     "-f --date-format <format>",
     "Date format (default is YYYY-MM-DD)",
-    default_date_format
+    defaultDateFormat
+  ).option(
+    "-r --reverse",
+    "Convert from decimal date to normal date"
   )
+
 
 commander
   .on("--help", function() {
@@ -32,8 +36,29 @@ commander
   })
   .parse(process.argv);
 
-let date = moment(date_input, commander.dateFormat);
-let decimal_date_value =  parseInt(date.year()) + date.diff(moment(date.year(), "YYYY"), 'years', true);
+
+function decimalDateFormat(decimalDate, dateFormat) {
+
+  // split integer and decimal
+  let dateYear = moment(Math.floor(decimalDate), "YYYY");
+  let dateDecimal = decimalDate - Math.floor(decimalDate)
+
+  return moment(dateYear.year(), "YYYY").add(moment.duration(dateDecimal, 'years')).format(dateFormat);
+  
+}
+
+function formatToDecimalDate(dateInput, dateFormat) {
+  let date = moment(dateInput, commander.dateFormat);
+  return parseInt(date.year()) + date.diff(moment(date.year(), "YYYY"), 'years', true);
+}
+
+if(commander.reverse) {
+  console.log(decimalDateFormat(dateInput, commander.dateFormat));
+  return
+}
 
 // Pretty print table
-console.log(decimal_date_value);
+let decimalDateValue = formatToDecimalDate(dateInput, commander.dateFormat);
+console.log(decimalDateValue);
+
+
