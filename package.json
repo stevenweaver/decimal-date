@@ -1,6 +1,6 @@
 {
   "name": "decimal-date",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Accepts a date in any format and returns a decimal date like seen in BEAST or the lubridate R package",
   "main": "src/index.js",
   "bin": {
