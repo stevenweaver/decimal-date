@@ -39,7 +39,7 @@ BetaCoV_Vietnam_VR03-38142_2020_EPI_ISL_408668,2020-01-24
 np, just do something like this or use whatever else.
 
 ```
-for x in $(cat tips.csv); do echo -n `cut -d',' -f1 <<< $x`, >> converted.csv; decimal-date `cut -d',' -f2 <<< $x` >> converted.csv; done;
+for x in $(cat tips.csv); do decimal-date `cut -d',' -f2 <<< $x` >> converted.csv; done;
 ```
 
 Made with 💝 by @stevenweaver.
