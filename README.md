@@ -18,6 +18,12 @@ Use in your pipeline alongside beast, treedater, phylotree.js, etc., and realize
 2017.0510752688172
 ```
 
+Reverse 
+```
+12:59:01 sweaver@home Programming decimal-date -r 2017.5 
+2017-07-01
+```
+
 ## FAQ
 
 > But Steve, I have a csv file that looks like this and I wanna convert all the dates. This tool is stupid.
